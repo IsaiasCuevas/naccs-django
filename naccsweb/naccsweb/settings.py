@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'settings.apps.SettingsConfig',
     'core.apps.CoreConfig',
     'users.apps.UsersConfig',
-    'powerpugs.apps.PPConfig',
+    'powerpugs.apps.PowerpugsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
