@@ -1,0 +1,122 @@
+{% extends 'core/base.html' %} 
+{% load static %}
+{% block title %}Power Pugs{% endblock %}
+
+{% block content %}
+<div class="pp-application-choose">
+  <div class="pp-row-placeholder"></div>
+  <div></div>
+  <div class="pp-app">
+    <a class="pp-app-button" href="/powerpugs/application">Player Application</a>
+    <!-- <div class="pp-app-button"></div> -->
+  </div>
+
+  {% if not user.is_authenticated or not app %}
+  <div class="pp-igl-app">
+    <a class="pp-app-na-button" href="/powerpugs/application/igl">In-Game Leader Application</a><br><br>
+    <h6>MUST SUBMIT PLAYER APPLICATION TO ACCESS THE APPLICATION</h6> 
+    <!-- <div class="pp-igl-app-button"></div> -->
+  </div>
+  {% else %}
+  <div class="pp-igl-app">
+    <a class="pp-app-button" href="/powerpugs/application/igl">In-Game Leader Application</a><br><br>
+    <h5>MUST SUBMIT PLAYER APPLICATION TO ACCESS THE APPLICATION</h5> 
+    <!-- <div class="pp-igl-app-button"></div> -->
+  </div>
+  {% endif %}
+ 
+
+  <div></div>
+
+  
+  <div class="pp-info">
+   <h1 style="text-align: center;">Power Pug Season 3 Information</h1> 
+
+<p>
+NACCS Power Pugs Season 3 is a cutting-edge competitive queue that mirrors structured team league play through unprecedented innovation. Only the best of the best in the collegiate scene is permitted into this rigorous queue on an exclusive invite and application basis. 
+
+Every player will be required to sign a legally binding contract; authorized in-game leaders will be required to sign an additional legally binding contract. I recommend thoroughly reading each contract you sign; for all you know, you could be signing your life away to NACCS. 
+
+Accepted applicants will be held legally responsible for the entirety of their signed contract(s). If you are not willing to accept this level of accountability and legal responsibility then do not apply. 
+
+<h2>Player Eligibility:</h2>
+Fulfill one criteria from each of the following sections.
+
+<h3>Section 1: Meet one of the following criterias to compete:</h3>
+Actively enrolled as a part-time or full-time student at an accredited college or university during the 2019-2020 school year; or
+College or university graduate with an Associate Degree or higher.
+
+<h3>Section 2: Meet one of the following criterias with adequate league statistics to compete:</h3>
+<ul>
+    <li>actively enrolled or successfully completed one full ESEA-ProLeague season;</li>
+    <li>actively enrolled or successfully completed one full ESEA-MDL season;</li>
+    <li>actively enrolled or successfully completed one full ESEA-Advanced season;</li>
+    <li>actively enrolled or successfully completed one full ESEA-Main season;</li>
+    <li>actively enrolled on a top 15 accredited collegiate team according to NACCS League Rankings.</li>
+</ul>
+
+* NACCS reserves the right to accept exceptional applicants who fail to meet one of the criterias listed in Section 2.
+
+<h3>Level 10 ELO Boost:</h3>
+FACEIT will Level 10 (2100 ELO) boost accepted Player Applicants who are not currently Level 10 at FACEIT's sole discretion.
+
+
+<h3>Player Application (required):</h3>
+Accepted applicants will receive a fully signed and finalized version of their STANDARD ESPORTS PLAYER CONTRACT back. 
+
+<h3>In-Game Leader Application (optional):</h3>
+Players who wish to be authorized In-Game Leader's must fill out the additional In-Game Leader Application on top of this Player Application. Accepted In-Game Leader applicants may be subject to partial, if not full, entrance fee sponsorship.
+
+<h3>Entrance Fee:</h3>
+$10.00 USD per player <br>
+Each player’s buy-in will be allocated accordingly to increase the overall prize pool. <br>
+Stellar In-Game Leader applications may be subject to partial, if not full, sponsored entrance fees. 
+
+<h3>Duration of the Season (Pacific Standard Time): </h3>
+February 10th 5:00 P.M. - March 1st 11:59 P.M.
+
+<h3>Time Windows (Pacific Standard Time)</h3>
+Monday - Thursday: 5:00 P.M. - 10 P.M. <br>
+Friday - Sunday: 5:00 P.M. - 11:59 P.M.  
+
+<h3>Prizing:</h3>
+Tentative estimated total prizing for the entire season: $1,500 - $2,500 USD
+
+<h2>Power Pugs Season 3 is split up into three phases:</h2>
+
+
+<h3>Phase 1: February 10th - February 16th</h3>
+<ul>
+    <li>1st -  $(40%) USD</li>
+    <li>2nd - $(25%) USD</li>
+    <li>3rd - $(15%) USD</li>
+    <li>4th - $(10%) USD</li>
+    <li>5th - $(10%) USD</li>
+</ul>
+
+<h3>Phase 2: February 17th - February 23rd</h3>
+<ul>
+<li>1st -  $(40%) USD</li>
+<li>2nd - $(25%) USD</li>
+<li>3rd - $(15%) USD</li>
+<li>4th - $(10%) USD</li>
+<li>5th - $(10%) USD</li>
+</ul>
+
+<h3>Phase 3: February 24th - March 1st</h3>
+<ul>
+    <li>1st -  $(50%) USD</li>
+    <li>2nd - $(30%) USD</li>
+    <li>3rd - $(20%) USD</li>
+</ul>
+
+FPL-C Qualifier Invites are pending.
+
+
+
+
+</p>
+
+  </div>
+</div>
+{% endblock %}

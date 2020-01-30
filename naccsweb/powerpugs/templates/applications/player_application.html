@@ -1,0 +1,86 @@
+{% extends 'core/base.html' %} {% load static %} {% block title %} Power Pugs
+{%endblock %} {% block content %}
+<div class="pp-player-app-page">
+  <div></div>
+  <div class="pp-general-app-info">
+    <p>
+    <h1>Player Application General Information</h1>
+    NACCS Power Pugs Season 3 is a cutting-edge competitive queue that mirrors structured team league play through unprecedented innovation. Only the best of the best in the collegiate scene is permitted into this rigorous queue on an exclusive invite and application basis. <br><br>
+
+    Every player will be required to sign a legally binding contract; authorized in-game leaders will be required to sign an additional legally binding contract. I recommend thoroughly reading each contract you sign; for all you know, you could be signing your life away to NACCS.  <br><br>
+    
+    Accepted applicants will be held legally responsible for the entirety of their signed contract(s). If you are not willing to accept this level of accountability and legal responsibility then do not apply. <br><br>
+    
+    <h2>Player Eligibility:</h2>
+    Fulfill one criteria from each of the following sections.
+    
+    <h3>Section 1: Meet one of the following criterias to compete:</h3>
+    <ul>
+      <li>Actively enrolled as a part-time or full-time student at an accredited college or university during the 2019-2020 school year; or</li>
+      <li>College or university graduate with an Associate Degree or higher.</li>
+    </ul>
+    
+    
+    <h3>Section 2: Meet one of the following criterias with adequate league statistics to compete:</h3>
+    <ul>
+        <li>actively enrolled or successfully completed one full ESEA-ProLeague season;</li>
+        <li>actively enrolled or successfully completed one full ESEA-MDL season;</li>
+        <li>actively enrolled or successfully completed one full ESEA-Advanced season;</li>
+        <li>actively enrolled or successfully completed one full ESEA-Main season;</li>
+        <li> actively enrolled on a top 15 accredited collegiate team according to NACCS League Rankings.</li>
+    </ul>
+    
+    * NACCS reserves the right to accept exceptional applicants who fail to meet one of the criterias listed in Section 2.
+    
+    <h3>Level 10 ELO Boost:</h3>
+    FACEIT will Level 10 (2100 ELO) boost accepted applicants who are not currently Level 10 at FACEIT's sole discretion. 
+    
+    
+    <h3>Player Application (required):</h3>
+    Accepted applicants will receive a fully signed and finalized version of their STANDARD ESPORTS PLAYER CONTRACT back. 
+    
+    <h3>In-Game Leader Application (optional):</h3>
+    Players who wish to be authorized In-Game Leader's must fill out the additional In-Game Leader Application on top of this Player Application. Accepted In-Game Leader applicants may be subject to partial, if not full, entrance fee sponsorship.
+    
+    <h3>Entrance Fee:</h3>
+    $10.00 USD per player <br>
+    Each player’s buy-in will be allocated accordingly to increase the overall prize pool. <br>
+    Stellar In-Game Leader applications may be subject to partial, if not full, sponsored entrance fees. </p></div>
+    <div class="pp-general-app-form">
+
+    {% if app %}
+    {% if app.status == "Pending" %}
+    <div class="application-status-pending">
+    {% endif %}
+    {% if app.status == "Denied" %}
+    <div class="application-status-denied">
+    {% endif %}
+    {% if app.status == "Accepted" %}
+    <div class="application-status-accepted">
+    {% endif %}
+      <h2>Application Status:</h2>
+      <p>{{app.status}}</p>
+    </div>
+    
+     
+    {% else %}
+    <div class="gen-contract-download">
+      <a target="_blank" href="https://naccs-s3.s3.us-east-2.amazonaws.com/media/public/power_pugs/STANDARD_ESPORTS_PLAYER_CONTRACT.pdf" class="pp-app-button contract-download">Download Player Contract</a>
+    <br><br> <br>
+    
+    {% if success %}
+    <div class="success">{{success}}</div>
+    {% endif %}
+  </div>
+  
+<div>
+    <form action="" method="post" enctype="multipart/form-data">
+      {% csrf_token %} {{ form.as_p }}
+      <input class="ghost_button" type="submit" value="Submit" />
+    </form>
+
+    {% endif %}
+  </div>
+</div>
+</div>
+{% endblock %}

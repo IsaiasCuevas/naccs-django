@@ -1,0 +1,59 @@
+{% extends 'core/base.html' %} {% load static %} {% block title %} Power Pugs
+{%endblock %} {% block content %}
+<div class="pp-player-app-page">
+  <div></div>
+  <div class="pp-igl-app-info">
+    <p>     
+        <h2>This application is solely for experienced In-Game Leaders who choose to be authorized and given the power and authority to In-Game Lead during Power Pugs Season 3.</h2> <br>
+        
+        Accepted In-Game Leader applicants may be subject to partial, if not full, entrance fee sponsorship. <br><br>
+        
+        Accepted In-Game Leader applicants will be held legally responsible for the entirety of their signed contract(s). If you are not willing to accept this level of accountability and legal responsibility then do not apply. <br><br>
+        
+        
+        <h2>In-Game Leader Eligibility:</h2>
+        <h3>Fulfill one criteria from the following section.</h3>
+        
+        <h3>Section 1: Meet one of the following criterias with adequate league statistics to compete:</h3>
+        <ul>
+            <li>actively enrolled or successfully completed one full ESEA-ProLeague season as the In-Game Leader;</li> 
+            <li>actively enrolled or successfully completed one full ESEA-MDL season as the In-Game Leader;
+                </li>
+            <li>actively enrolled or successfully completed one full ESEA-Advanced season as the In-Game Leader;
+                </li>
+            <li>actively enrolled or successfully completed one full ESEA-Main season as the In-Game Leader; or
+                </li>
+                <li>actively enrolled as an in-game leader on a top 15 accredited collegiate team according to NACCS League Rankings.</li>
+        </ul>
+       
+        
+        <strong>NACCS reserves the right to accept exceptional applicants who fail to meet Section 1’s criteria.</strong> 
+         </p></div>
+    <div class="pp-igl-app-form">
+      {% if app %}
+      <div class="application-status">
+        <h2>Application Status:</h2>
+        {{app.status}}
+      </div>
+
+      {% else %}
+        <div class="igl-contract-download">
+            <a target="_blank" href="https://naccs-s3.s3.us-east-2.amazonaws.com/media/public/power_pugs/IN-GAME_LEADER_PLAYER_CONTRACT.pdf" class="pp-app-button contract-download">Download IGL Contract</a>
+          <br><br><br>
+          
+          {% if success %}
+          <div class="success">{{success}}</div>
+          
+          {% endif %}
+        </div>     
+    <div>
+        <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %} {{ form.as_p }}
+        <input class="ghost_button" type="submit" value="Submit" />
+      </form>
+      {% endif %}
+      <br>
+    </div>
+  </div>
+</div>
+{% endblock %}
