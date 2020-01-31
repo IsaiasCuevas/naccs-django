@@ -14,10 +14,10 @@ import os
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
 
- sentry_sdk.init(
-         dsn="https://4aa63e7f917a4de28df9af3ae482eaf2@sentry.io/1781235",
-         integrations=[DjangoIntegration()]
- )
+# sentry_sdk.init(
+#         dsn="https://4aa63e7f917a4de28df9af3ae482eaf2@sentry.io/1781235",
+#         integrations=[DjangoIntegration()]
+# )
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -36,7 +36,7 @@ DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 print("DEBUG MODE:", DEBUG)
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['192.168.254.25', 'localhost', '192.168.254.34']
 
 # Application definition
 
