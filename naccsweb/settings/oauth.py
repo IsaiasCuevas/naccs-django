@@ -22,7 +22,7 @@ def get_discord_name(code):
         'client_secret':    DISCORD_CLIENT_SECRET,
         'grant_type':       'authorization_code',
         'code':             code,
-        'redirect_uri':     'http://localhost:8000/settings/account/discordcallback',
+        'redirect_uri':     'http://collegiatecounterstrike.com/settings/account/discordcallback',
         'scope':            'identify'
     }
 
