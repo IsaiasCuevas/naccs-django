@@ -22,7 +22,7 @@ class PowerPugPlayerApp(forms.Form):
     igl =  forms.CharField(label='Opt Into Secondary IGL Program', widget=forms.Select(choices=IGL_OPTIONS))
     lan = forms.CharField(label="LAN Exp", widget=forms.Textarea(attrs={'rows': 5, 'cols': 60}), required=False)
     other = forms.CharField(widget=forms.Textarea(attrs={'rows': 5, 'cols': 60}), required=False)
-    contract = forms.FileField(required=False)
+    contract = forms.FileField(label="Upload Signed Contract",required=True)
 
 class PowerPugIGLApp(forms.Form):
     def clean(self):
@@ -35,7 +35,7 @@ class PowerPugIGLApp(forms.Form):
     curr_team = forms.CharField(label="Current Collegiate Team", required=False)
     lan = forms.CharField(label="LAN Exp", widget=forms.Textarea(attrs={'rows': 5, 'cols': 60}), required=False)
     other = forms.CharField(widget=forms.Textarea(attrs={'rows': 5, 'cols': 60}), required=False)
-    contract = forms.FileField(required=False)
+    contract = forms.FileField(label="Upload Signed Contract",required=True)
 
 
 
