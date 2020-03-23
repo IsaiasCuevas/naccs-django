@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
-from .models import Team, School, Player, Payment, Division
+from .models import Team, School, Player, Payment, Division,Bracket
 
 
 class PlayerAdmin(admin.ModelAdmin):
@@ -32,9 +32,12 @@ class SchoolAdmin(admin.ModelAdmin):
 class PaymentAdmin(admin.ModelAdmin):
     list_display = ('paymentid', 'payerid', 'date')
 
+    
+
 
 admin.site.register(Team, TeamAdmin)
 admin.site.register(Player, PlayerAdmin)
 admin.site.register(School, SchoolAdmin)
 admin.site.register(Payment, PaymentAdmin)
 admin.site.register(Division)
+admin.site.register(Bracket)

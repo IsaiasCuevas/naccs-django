@@ -1,0 +1,47 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Collegiate League{% endblock %}
+
+{% block content %}
+
+<div class="bracket-nav-page">
+    <div></div>
+    <div class="div1-bracket-button">
+        <a class="pp-app-button" href="/league/bracket/d1">Division 1 Bracket</a><br><br>
+    </div>
+    <div class="div2-bracket-button">
+        <a class="pp-app-button" href="/league/bracket/d2">Division 2 Bracket</a><br><br>
+    </div>
+    <div></div>
+    <div></div>
+    <div class="playoff-info">
+        <h2 style="text-align: center;">Playoffs 2020</h2>
+        <p>
+            Upper Bracket Round 1: March 28th - March 31st
+            <br><br>
+            Upper Bracket Round 2 & Lower Bracket Round 1: April 1st - April 4th
+            <br><br>
+            Upper Bracket Round 3 & Lower Bracket Round 2: April 5th - April 8th
+            <br><br>
+            Upper Bracket Round 4 & Lower Bracket Round 3: April 9th - April 12th
+            <br><br>
+            Upper Bracket Round 5 & Lower Bracket Round 4: April 13th - April 16th
+            <br><br>
+            Lower Bracket Round 5: April 17th - April 21st
+            <br><br>
+            Lower Bracket Round 6: April 22nd - April 25th
+            <br><br>
+            <h3 style="text-align: center;">Championship Weekend</h3> <br>
+            Lower Bracket Round 7 (Quarter-Finals): Saturday, May 2nd at 5 P.M. CST
+            <br>
+            <br>
+            Lower Bracket Round 8 (Semi-Finals): Saturday, May 2nd at 8 P.M. CST
+            <br><br>
+            Winner Bracket Round 6 (Championship Finals): Sunday, May 3rd at 4 P.M. CST
+        </p>
+    </div>
+    <div></div>
+</div>
+
+{% endblock %}

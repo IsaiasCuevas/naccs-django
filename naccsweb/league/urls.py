@@ -13,4 +13,8 @@ urlpatterns = [
     path(r'manage_team/<team_id>', views.manage_team, name='manage_team'),
     path(r'pay_fee', views_payments.pay_fee),
     path(r'payment_return', views_payments.payment_return, name='payment_return'),
+    path(r'league/bracket/', views.bracket, name='bracket'),
+    path(r'league/bracket/d1', views.d1bracket, name='d1bracket'),
+    path(r'league/bracket/d2', views.d2bracket, name='d2bracket')
+
 ]

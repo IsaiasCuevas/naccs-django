@@ -1,0 +1,59 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Collegiate League{% endblock %}
+
+{% block content %}
+<div class="bracket-title">
+    <div></div>
+    <div class="bracket-title-head">
+        <h1>Division 1 Playoffs</h1>
+    </div>
+    <div></div>
+    <div id="minimal"></div>
+
+
+</div>
+
+
+
+<link rel="stylesheet" type="text/css" href="{% static 'jquery.bracket.min.css' %}" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="{% static 'jquery.bracket.min.js' %}"></script>
+<script>
+    var bigData = {
+        teams: [
+            ["1 RMU", "32 U of Michigan"],
+            ["3 RIT", "30 ISUJV"],
+            ["5 Carleton", "28 NEU"],
+            ["7 Durham", "26 Kennesaw"],
+            ["9 ASU", "24 U of Kansas"],
+            ["11 Indiana", "22 MTU"],
+            ["13 UConn", "20 LVC"],
+            ["15 MUOH", "18 Kansas State"],
+            ["16 UCR", "17 WSU"],
+            ["14 UIUC", "19 UCSC"],
+            ["12 VTech", "21 Rutger"],
+            ["10 Cincinnati", "23 Akron"],
+            ["8 York", "25 VCU"],
+            ["6 UCSD", "27 Drexel"],
+            ["4 Alabama", "29 UT Dallas"],
+            ["2 UCF", " 31 DALCS"]
+        ],
+        results: [{{ d1_bracket.upper_bracket }}, {{ d1_bracket.lower_bracket }}, {{ d1_bracket.finals }}]
+    }
+
+    var resizeParameters = {
+        teamWidth: 90,
+        scoreWidth: 20,
+        matchMargin: 10,
+        roundMargin: 50,
+        init: bigData
+    }
+
+    $(function () {
+        $('div#minimal').bracket(resizeParameters)
+    })
+</script>
+
+{% endblock %}

@@ -57,3 +57,9 @@ class Payment(models.Model):
     payerid = models.CharField(max_length=25, blank=True, null=True)
     users = models.ManyToManyField(Player)
     date = models.CharField(max_length=50, default=0, blank=True)
+
+class Bracket(models.Model): 
+    bracketname = models.CharField(max_length=50, blank=True)
+    upper_bracket = models.TextField(max_length=1000, blank=True)
+    lower_bracket = models.TextField(max_length=1000, blank=True)
+    finals = models.TextField(max_length=1000, blank=True)

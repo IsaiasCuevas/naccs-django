@@ -1082,3 +1082,43 @@ textarea {
     color: white;
     text-decoration: none;
   }
+
+  #minimal{
+      margin-bottom: 50px;
+      margin-right: 500px !important;
+  }
+
+  .highlight{
+    background-color: #de9b35 !important;
+  }
+  .bracket-title{
+      display: grid;
+      grid-template-columns: 25% 50% 25%;
+  }
+  .bracket-title-head{
+      justify-self: center;
+      align-self: center;
+  }
+  .label{
+      background: lightgray !important;
+  }
+
+  .bracket-nav-page{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+.div1-bracket-button{
+    margin-top: 50px;
+    align-self: center;
+    text-align: center;
+}
+.div2-bracket-button{
+    margin-top: 50px;
+    align-self: center;
+    text-align: center;
+}
+.playoff-info{
+    grid-column: 2/4;
+    text-align: center;
+    
+}

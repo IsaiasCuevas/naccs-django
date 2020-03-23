@@ -9,7 +9,7 @@ from watson import search as watson
 import logging
 
 from .forms import SchoolSearchForm, CreateTeamForm, JoinTeamForm, EditTeamForm
-from .models import School, Team, Player, Payment
+from .models import School, Team, Player, Payment, Bracket
 from .payment_utils import check_ready, create_itemized_payment, get_payment_items, needs_to_pay
 
 def on_a_team(user):
@@ -272,3 +272,14 @@ def hub(request):
 
 def league(request):
     return render(request, 'league.html')
+
+def bracket(request):
+    return render(request, 'bracket_nav.html')
+
+def d1bracket(request):
+    d1_bracket = Bracket.objects.filter(bracketname = "Division_1")
+    return render(request, 'd1bracket.html', {'d1_bracket': d1_bracket[0]})
+
+def d2bracket(request):
+    d2_bracket = Bracket.objects.filter(bracketname = "Division_2")
+    return render(request, 'd2bracket.html', {'d2_bracket': d2_bracket[0]})
