@@ -945,6 +945,11 @@ textarea {
   color: white;
 }
 
+#regionals{
+    background-color: #5d79ae !important;
+    color: white;
+}
+
 .pp-application-choose {
   display: grid;
   grid-template-columns: 1fr 2fr 2fr 1fr;
