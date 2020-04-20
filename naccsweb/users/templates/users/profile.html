@@ -6,21 +6,24 @@
 {% block content %}
 <section id="player_banner">
     {% if player.user.profile.picture %}
-        <img id="player_img" src="{% get_media_prefix %}{{ player.user.profile.picture }}">
+    <img id="player_img" src="{% get_media_prefix %}{{ player.user.profile.picture }}">
     {% else %}
-        <img id="player_img" src="{% static 'assets/silhouette.png' %}">
+    <img id="player_img" src="{% static 'assets/silhouette.png' %}">
     {% endif %}
     <section id="player_info">
         <div id="nickname">{{ player.user.profile.nickname }}</div>
         <div id="full_name">{{ player.user.first_name }} {{ player.user.last_name }}</div>
         <div id="school">{{ player.user.profile.college }}</div>
+        <div id="division"> {{ player.user.profile.year }} - {{ player.user.profile.major }}</div>
         <div id="division">{{ player.team.division.name }}</div>
         <div id="contact">
             <div id="discord">
                 <i class="fab fa-discord"></i> {{ player.user.profile.discord }}
             </div>
             <div id="faceit">
-                <img id="faceit_icon" src="{% static 'assets/faceit_pheasant.png' %}"> {{ player.user.profile.faceit }}
+
+                <a target="_blank" href="https://www.faceit.com/en/players/{{ player.user.profile.faceit }}"><img
+                        id="faceit_icon" src="{% static 'assets/faceit_pheasant.png' %}"></a>
             </div>
     </section>
 </section>

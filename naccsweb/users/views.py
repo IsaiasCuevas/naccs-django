@@ -18,7 +18,7 @@ def profile_search(request):
         form = PlayerSearchForm(request.POST)
 
         if (form.is_valid()):
-            search_results = watson.filter(Player, form.data['query'])
+            search_results = watson.filter(Profile, form.data['query'])
             return render(request, 'users/search.html', {'form': form, 'results':search_results})
     else:
         form = PlayerSearchForm()
@@ -29,7 +29,7 @@ def profile_search(request):
 def profile(request, page_alias):
     try:
         user = User.objects.get(username=page_alias)
-        player = Player.objects.get(user=user)
+        player = Profile.objects.get(user_id=user)
     except:
         return redirect('not_found')
 

@@ -88,13 +88,23 @@ class EditUserForm(forms.ModelForm):
     first_name = forms.CharField(label="First Name", required=False)
     last_name = forms.CharField(label="Last Name", required=False)
 
+YEAR= [
+    ('Freshman', 'Freshman'),
+    ('Sophomore', 'Sophomore'),
+    ('Junior', 'Junior'),
+    ('Senior', 'Senior'),
+    ('Grad', 'Grad'),
+    ]
+
 class EditProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ('bio', 'picture')
-
+        fields = ('major','year','bio', 'picture')
+    major = forms.CharField(label="Major", required=False)
+    year = forms.CharField(label='School Year', widget=forms.Select(choices=YEAR),required=False)
     bio = forms.CharField(widget=forms.Textarea(attrs={'rows': 5, 'cols': 60}), required=False)
     picture = forms.ImageField(label="Player headshot (200x200px)", required=False)
+    #esea = forms.CharField(label='ESEA Profile *Optional',required=False)
 
 class MilitaryForm(forms.Form):
     # TODO
