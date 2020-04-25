@@ -23,7 +23,7 @@ class Profile(models.Model):
     collegiate_hub_invite = models.CharField(max_length=8, blank=True)
     birth_date = models.DateField(null=True, blank=True)
     picture = models.ImageField(upload_to=get_file_path, null=True, blank=True)
-    major = models.CharField(max_length=32, blank=True)
+    major = models.CharField(max_length=100, blank=True)
     year = models.CharField(max_length=32, blank=True)
 
 
