@@ -4,5 +4,5 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('riot', views.riot, name="riot")
+    path('riot.txt', views.riot, name="riot")
 ]
