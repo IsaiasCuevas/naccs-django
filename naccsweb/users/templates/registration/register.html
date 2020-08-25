@@ -11,6 +11,11 @@
             <form action="" method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
+                <br>
+                <span>**Note: Please use your personal email to create your account. Many college email filters</span>
+                <br>
+                <span>block our registration email.</span>
+                <br>
                 <button class="ghost_button" type="submit">Register</button>
             </form>
         </section>
